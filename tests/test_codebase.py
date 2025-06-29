@@ -2,7 +2,7 @@ import unittest
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from codebase_to_text.codebase_to_text import CodebaseToText
+from codebase.codebase import Codebase
 import shutil
 
 
@@ -17,7 +17,7 @@ class TestCodebaseToText(unittest.TestCase):
             file.write("Test file 2 content")
 
     def test_get_text(self):
-        code_to_text = CodebaseToText(input_path=self.test_folder_path, output_path="output.txt", output_type="txt")
+        code_to_text = Codebase(input_path=self.test_folder_path, output_path="output.txt", output_type="txt")
         text = code_to_text.get_text()
         expected_text = f"Folder structure:\n{self.test_folder_path}/\n    test_file1.txt\n    test_file2.txt\n\nFile Contents:\n\n{self.test_folder_path}/test_file1.txt\nFile type: Text (.txt)\nTest file 1 content\n\n{self.test_folder_path}/test_file2.txt\nFile type: Text (.txt)\nTest file 2 content"
         self.assertEqual(text, expected_text)

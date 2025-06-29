@@ -14,21 +14,21 @@ Converts a codebase (folder structure with files) into a single text file or a M
 You can install the package using pip:
 
 ```bash
-pip install codebase-to-text
+pip install codebase
 
 Usage
 Command-line Interface (CLI)
 You can use the package via the command line interface (CLI):
 
-codebase-to-text --input "path_or_github_url" --output "output_path" --output_type "txt"
+codebase --input "path_or_github_url" --output "output_path" --output_type "txt"
 
 
 Pythonic Way
 You can also use it programmatically in your Python code:
 
-from codebase_to_text import CodebaseToText
+from codebase import Codebase
 
-code_to_text = CodebaseToText(input_path="path_or_github_url", output_path="output_path", output_type="txt")
+code_to_text = Codebase(input_path="path_or_github_url", output_path="output_path", output_type="txt")
 code_to_text.get_file()
 
 
@@ -39,12 +39,12 @@ Parameters
 Examples
 Convert a local codebase to a text file:
 
-codebase-to-text --input "~/projects/my_project" --output "output.txt" --output_type "txt"
+codebase --input "~/projects/my_project" --output "output.txt" --output_type "txt"
 
 
 Convert a GitHub repository to a Microsoft Word document:
 
-codebase-to-text --input "https://github.com/username/repo_name" --output "output.docx" --output_type "docx"
+codebase --input "https://github.com/username/repo_name" --output "output.docx" --output_type "docx"
 
 Contributing
 Contributions are welcome! Please follow these steps:
